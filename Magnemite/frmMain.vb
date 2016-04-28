@@ -15,12 +15,12 @@ Public Class frmMain
 
         TreeList1.Nodes.Clear()
         If System.IO.Directory.Exists(localBase) Then
-            Dim lala As New System.IO.DirectoryInfo(localBase)
+            Dim DirInfo As New System.IO.DirectoryInfo(localBase)
 
-            Dim noPai As TreeListNode = TreeList1.AppendNode({lala.Name, lala}, DirectCast(Nothing, TreeListNode))
+            Dim noPai As TreeListNode = TreeList1.AppendNode({DirInfo.Name, DirInfo}, DirectCast(Nothing, TreeListNode))
             noPai.ImageIndex = 0
 
-            adicionaFilhos(lala, noPai)
+            adicionaFilhos(DirInfo, noPai)
 
             TreeList1.ExpandAll()
             btnVerifica_ItemClick(Nothing, Nothing)
