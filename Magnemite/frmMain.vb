@@ -35,9 +35,9 @@ Public Class frmMain
         Next
 
         For Each cadaFile As System.IO.FileInfo In Diretorio.GetFiles
-            Dim novoNo As TreeListNode = TreeList1.AppendNode({cadaFile.Name, cadaFile.FullName}, noPai)
-            novoNo.ImageIndex = 1
-            novoNo.SelectImageIndex = 1
+            Dim newNo As TreeListNode = TreeList1.AppendNode({cadaFile.Name, cadaFile.FullName}, noPai)
+            newNo.ImageIndex = 1
+            newNo.SelectImageIndex = 1
         Next
     End Sub
 
