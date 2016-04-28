@@ -17,10 +17,10 @@ Public Class frmMain
         If System.IO.Directory.Exists(localBase) Then
             Dim DirInfo As New System.IO.DirectoryInfo(localBase)
 
-            Dim noPai As TreeListNode = TreeList1.AppendNode({DirInfo.Name, DirInfo}, DirectCast(Nothing, TreeListNode))
-            noPai.ImageIndex = 0
+            Dim nodeParent As TreeListNode = TreeList1.AppendNode({DirInfo.Name, DirInfo}, DirectCast(Nothing, TreeListNode))
+            nodeParent.ImageIndex = 0
 
-            adicionaFilhos(DirInfo, noPai)
+            adicionaFilhos(DirInfo, nodeParent)
 
             TreeList1.ExpandAll()
             btnVerifica_ItemClick(Nothing, Nothing)
