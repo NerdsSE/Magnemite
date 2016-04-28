@@ -29,9 +29,9 @@ Public Class frmMain
 
     Private Sub adicionaFilhos(Diretorio As System.IO.DirectoryInfo, ByRef noPai As TreeListNode)
         For Each cadaDir As System.IO.DirectoryInfo In Diretorio.GetDirectories
-            Dim novoPai As TreeListNode = TreeList1.AppendNode({cadaDir.Name, ""}, noPai)
-            novoPai.ImageIndex = 0
-            adicionaFilhos(cadaDir, novoPai)
+            Dim newParent As TreeListNode = TreeList1.AppendNode({cadaDir.Name, ""}, noPai)
+            newParent.ImageIndex = 0
+            adicionaFilhos(cadaDir, newParent)
         Next
 
         For Each cadaFile As System.IO.FileInfo In Diretorio.GetFiles
